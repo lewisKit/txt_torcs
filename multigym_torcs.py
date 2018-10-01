@@ -41,28 +41,6 @@ class TorcsEnv:
         self.start_torcs_process()
         time.sleep(0.5)
 
-        ##print("launch torcs")
-        """
-        os.system('pkill torcs')
-        time.sleep(0.5)
-        if self.vision is True:
-            os.system('torcs -nofuel -nodamage -nolaptime -vision &')
-        else:
-            os.system('torcs -nofuel -nolaptime &')
-        time.sleep(0.5)
-        os.system('sh autostart.sh')
-        time.sleep(0.5)
-
-
-        # Modify here if you use multiple tracks in the environment
-        self.client = snakeoil3.Client(p=3101, vision=self.vision)  # Open new UDP in vtorcs
-        self.client.MAX_STEPS = np.inf
-
-        client = self.client
-        client.get_servers_input()  # Get the initial input from torcs
-
-        obs = client.S.d  # Get the current full-observation from torcs
-        """
         # The first version is with brak
         if throttle is False:
             self.action_space = spaces.Box(low=-1.0, high=1.0, shape=(2,))
@@ -70,9 +48,7 @@ class TorcsEnv:
             self.action_space = spaces.Box(low=-1.0, high=1.0, shape=(3,))
 
         if vision is False:
-            # high = np.array([1., np.inf, np.inf, np.inf, 1., np.inf, 1., np.inf])
-            # low = np.array([0., -np.inf, -np.inf, -np.inf, 0., -np.inf, 0., -np.inf])
-            # self.observation_space = spaces.Box(low=low, high=high)
+            
             self.observation_space = spaces.Box(low=-np.inf, high=np.inf, shape=(29, ))
         else:
             high = np.array([1., np.inf, np.inf, np.inf, 1., np.inf, 1., np.inf, 255])
@@ -270,18 +246,6 @@ class TorcsEnv:
        time.sleep(0.5)
        self.start_torcs_process()
        time.sleep(0.5)
-
-       '''
-        os.system('pkill torcs')
-        time.sleep(0.5)
-        if self.vision is True:
-            os.system('torcs -nofuel -nodamage -nolaptime -vision &')
-        else:
-            os.system('torcs -nofuel -nolaptime &')
-        time.sleep(0.5)
-        os.system('sh autostart.sh')
-        time.sleep(0.5)
-        '''
 
     def agent_to_torcs(self, u):
         torcs_action = {'steer': u[0]}
