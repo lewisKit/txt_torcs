@@ -66,8 +66,6 @@ def main():
     train(road_type=args.road_type,
         num_timesteps=args.num_timesteps,
         seed=args.seed,
-        pol_type=args.pol,
-        depth=args.depth,
         port=args.p)
 
 
