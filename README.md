@@ -4,7 +4,7 @@ This repository incorporates serval common issues in the original [gym_torcs](ht
 1) Support Text Mode training in practice mode [#48](https://github.com/ugo-nama-kun/gym_torcs/issues/48);
 2) Support running multiple gym_torcs experiments on the same machine [#27](https://github.com/ugo-nama-kun/gym_torcs/issues/27);
 3) Upgrade torcs to the latest version;
-4) Display the car in the screen [#7](https://github.com/ugo-nama-kun/gym_torcs/issues/7).
+4) Display the car in the screen [#7](https://github.com/ugo-nama-kun/gym_torcs/issues/7);
 5) Support training different tracks. The supported tracks can be found in [TORCS](http://xed.ch/help/torcs.html).
 
 ## Examples of PPO
