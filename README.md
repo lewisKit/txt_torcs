@@ -39,7 +39,7 @@ If you want to run experiments and use vision mode on a remote server, personall
 The setup files can be find [here](https://gist.github.com/cyberang3l/422a77a47bdc15a0824d5cca47e64ba2).
 
 
-## Contact
+## Issue
 Currently I only test for sensor based training, not on image-based training like original gym_torcs.
 
 Please raise a issue if there is any bug or problem.
